@@ -4,11 +4,7 @@ Generic python project template to get you started utilizing docker containers.
 Predefined containers include:
 
 * Python
-* MongoDB
 * PostgreSQL
-* RabbitMQ
-* MySQL
-* phpMyAdmin
 
 ## Quickstart
 
