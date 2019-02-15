@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   py:
     build: .
@@ -7,15 +7,15 @@ services:
       - .:/code
     #command: python main.py
   # other handy stuff:
-  mongo:
-    image: "mongo"
-    #ports:
-    #  - "27017:27017"
-  rabbitmq:
-    image: "rabbitmq:management-alpine"
-    # admin dashboard http://localhost:8080/ user:guest pw:guest
-    ports:
-      - "8080:15672"
+  # mongo:
+  #   image: "mongo"
+  #   #ports:
+  #   #  - "27017:27017"
+  # rabbitmq:
+  #   image: "rabbitmq:management-alpine"
+  #   # admin dashboard http://localhost:8080/ user:guest pw:guest
+  #   ports:
+  #     - "8080:15672"
   postgres:
     image: postgres
     #ports:
@@ -24,19 +24,19 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
 
-  mysql:
-    image: mysql
-    # mysql user:root pw:mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=mysql
+  # mysql:
+  #   image: mysql
+  #   # mysql user:root pw:mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=mysql
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    # admin dashboard http://localhost:8081/ user:root pw:mysql
-    # open with "make myadmin"
-    links:
-      - mysql:db
-    ports:
-      - "8081:80"
-    environment:
-      - PMA_PORT=8081
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   # admin dashboard http://localhost:8081/ user:root pw:mysql
+  #   # open with "make myadmin"
+  #   links:
+  #     - mysql:db
+  #   ports:
+  #     - "8081:80"
+  #   environment:
+  #     - PMA_PORT=8081
